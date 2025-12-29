@@ -5,14 +5,15 @@ import torch
 import torchvision.transforms as transforms
 from PIL import Image
 from torchvision.utils import save_image
-import model_attention_dense  # Updated import
+import model_attention_dense
 
 # Configuration
 parser = argparse.ArgumentParser()
 parser.add_argument("--ir_dataroot", default="./datasets/test/IR", type=str)
 parser.add_argument("--vis_dataroot", default="./datasets/test/VIS", type=str)
 parser.add_argument("--output_root", default="./results/", type=str)
-parser.add_argument("--checkpoint_path", type=str, default="./checkpoints/fusion_epoch_20.pth")
+# UPDATED: Default set to your correct weight file
+parser.add_argument("--checkpoint_path", type=str, default="./checkpoints/fusion_last_10.pth")
 parser.add_argument("--gpu_id", type=str, default="0")
 
 if __name__ == "__main__":
